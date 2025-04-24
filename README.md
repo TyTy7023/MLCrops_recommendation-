@@ -1,5 +1,3 @@
-Dưới đây là phiên bản được viết lại rõ ràng và trình bày đẹp hơn cho file `README.md`:
-
 ---
 
 # 🌾 MLCrops Recommendation
