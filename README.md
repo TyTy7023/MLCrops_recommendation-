@@ -8,9 +8,11 @@
 
 ## 🚀 Hướng dẫn chạy ứng dụng
 
-### 1. Mở Terminal (CMD) tại thư mục chứa dự án
+### 1. Run model từ trong notebook để lấy 2 file .pkl vào thư mục dự án
 
-### 2. Kiểm tra cài đặt Python
+### 2. Mở Terminal (CMD) tại thư mục chứa dự án
+
+### 3. Kiểm tra cài đặt Python
 
 ```bash
 where python
