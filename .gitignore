@@ -25,3 +25,6 @@ env/
 # Mac / Windows
 .DS_Store
 Thumbs.db
+
+# Model and scaler files
+*.pkl

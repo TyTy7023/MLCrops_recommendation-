@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <title>Dự đoán từ mô hình ML</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6') no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 30px 40px;
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        max-width: 500px;
+        width: 100%;
+      }
+
+      h2 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 20px;
+      }
+
+      input[type="number"] {
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-sizing: border-box;
+        transition: border 0.3s ease;
+      }
+
+      input[type="number"]:focus {
+        border-color: #007bff;
+        outline: none;
+      }
+
+      input[type="submit"] {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 12px;
+        width: 100%;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+
+      .result {
+        margin-top: 20px;
+        font-size: 18px;
+        text-align: center;
+        color: #27ae60;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Dự đoán từ mô hình ML</h2>
+      <form method="POST" action="/predict">
+        <input type="number" name="N" placeholder="N (Nitơ)">
+        <input type="number" name="P" placeholder="P (Photpho)">
+        <input type="number" name="K" placeholder="K (Kali)">
+        <input type="number" name="temperature" placeholder="temperature (Nhiệt độ)">
+        <input type="number" name="humidity" placeholder="humidity (Độ ẩm)">
+        <input type="number" name="ph" placeholder="pH đất">
+        <input type="number" name="rainfall" placeholder="rainfall (lượng mưa) (mm)">
+        <input type="submit" value="Predict (dự đoán)">
+      </form>
+      {% if prediction_text %}
+        <div class="result">{{ prediction_text }}</div>
+      {% endif %}
+      {% if prediction_image %}
+        <div class="result">
+          <img src="{{ url_for('static', filename=prediction_image) }}" alt="Hình minh họa" style="max-width: 100%; margin-top: 15px; border-radius: 10px;">
+        </div>
+      {% endif %}
+
+    </div>
+  </body>
+</html>
